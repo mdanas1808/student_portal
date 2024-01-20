@@ -1,0 +1,30 @@
+<!-- students/templates/students/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+</head>
+<body>
+    <h1>Student List</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Nationality</th>
+            <th>City</th>
+            <!-- Add other columns as needed -->
+        </tr>
+        {% for student in student_data %}
+            <tr>
+                <td><a href="{% url 'student_detail' student.id %}">{{ student.id }}</a></td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.nationality }}</td>
+                <td>{{ student.city }}</td>
+                <!-- Add other columns as needed -->
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
